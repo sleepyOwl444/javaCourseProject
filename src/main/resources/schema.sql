@@ -6,10 +6,7 @@ CREATE TABLE IF NOT EXISTS User (
     middle_name VARCHAR(50)    COMMENT 'Второе имя',
     position VARCHAR(50)    COMMENT 'Должность',
     phone VARCHAR(20)    COMMENT 'Телефон',
-    doc_name VARCHAR(50)    COMMENT 'Название документа',
     doc_number INTEGER    COMMENT 'Номер документа',
-    doc_date DATE   COMMENT 'Дата выдачи документа',
-    citizenship_name VARCHAR(50)    COMMENT 'Название страны (гражданство)',
     citizenship_code INTEGER    COMMENT 'Код страны' ,
     is_identified    BOOLEAN    COMMENT ''
 );
@@ -41,30 +38,40 @@ COMMENT ON TABLE Organization IS 'Организация';
 
 
 CREATE TABLE IF NOT EXISTS Doc (
-    code    INTEGER NOT NULL    COMMENT 'Номер документа'    PRIMARY KEY ,
+    code    INTEGER NOT NULL    COMMENT 'Номер документа, уникальный идентификатор'    PRIMARY KEY ,
     name    VARCHAR(50)    COMMENT 'Название документа'
 );
-COMMENT ON TABLE Doc IS 'Документ';
+COMMENT ON TABLE Doc IS 'Справочник документов';
+
+CREATE TABLE IF NOT EXISTS Doc_Info (
+    id    INTEGER NOT NULL    COMMENT 'Уникальный идентифкатор'    PRIMARY KEY AUTO_INCREMENT ,
+    code    INTEGER NOT NULL    COMMENT 'Код документа' ,
+    date    DATE    COMMENT 'Дата выдачи документа'
+);
+COMMENT ON TABLE Doc_Info IS 'Информация по выданным документам';
 
 CREATE TABLE IF NOT EXISTS Country (
-    code    INTEGER NOT NULL    COMMENT 'Код страны'    PRIMARY KEY ,
+    code    INTEGER NOT NULL    COMMENT 'Код страныб уникальный идентификатор'    PRIMARY KEY ,
     name    VARCHAR(50)    COMMENT 'Название страны'
 );
 COMMENT ON TABLE Country IS 'Страна';
 
 
-CREATE INDEX IX_User_Id ON User (id);
+
+CREATE INDEX UX_User_Id ON User (id);
 
 CREATE INDEX IX_User_Office_Id ON User (office_id);
 ALTER TABLE User ADD FOREIGN KEY (office_id) REFERENCES Office (id);
 
 CREATE INDEX IX_User_Doc_Number ON User (doc_number);
-ALTER TABLE User ADD FOREIGN KEY (doc_number) REFERENCES Doc (code);
+ALTER TABLE User ADD FOREIGN KEY (doc_number) REFERENCES Doc_Info (code);
 
 CREATE INDEX IX_User_Citizenship_Code ON User (citizenship_code);
 ALTER TABLE User ADD FOREIGN KEY (citizenship_code) REFERENCES Country (code);
 
-CREATE INDEX IX_Office_Id ON Office (id);
+
+
+CREATE INDEX UX_Office_Id ON Office (id);
 
 CREATE INDEX IX_Office_Organization_Id ON Office (organization_id);
 ALTER TABLE Office ADD FOREIGN KEY (organization_id) REFERENCES Organization (id);
@@ -72,11 +79,21 @@ ALTER TABLE Office ADD FOREIGN KEY (organization_id) REFERENCES Organization (id
 CREATE INDEX IX_Office_User_Id ON Office (user_id);
 ALTER TABLE Office ADD FOREIGN KEY (user_id) REFERENCES User (id);
 
-CREATE INDEX IX_Organization_Id ON Organization (id);
+
+
+CREATE INDEX UX_Organization_Id ON Organization (id);
 
 CREATE INDEX IX_Organization_Office_Id ON Organization (office_id);
 ALTER TABLE Organization ADD FOREIGN KEY (office_id) REFERENCES Office (id);
 
-CREATE INDEX IX_Doc_Code ON Doc (code);
 
-CREATE INDEX IX_Country_Code ON Country (code);
+
+CREATE INDEX UX_Doc_Code ON Doc (code);
+
+
+CREATE INDEX UX_Doc_Info_Id On Doc_Info (id);
+
+CREATE INDEX IX_Doc_Info_Code on Doc_Info (code);
+ALTER TABLE Doc_Info ADD FOREIGN KEY (code) REFERENCES Doc (code);
+
+CREATE INDEX UX_Country_Code ON Country (code);
