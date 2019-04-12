@@ -22,9 +22,9 @@ CREATE TABLE IF NOT EXISTS Office (
 COMMENT ON TABLE Office IS 'Офис';
 
 CREATE TABLE IF NOT EXISTS User_Office (
-    id    INTEGER NOT NULL    COMMENT 'Уникальный идентификатор'    PRIMARY KEY AUTO_INCREMENT ,
     user_id    INTEGER    COMMENT 'Уникальный идентификатор Человека' ,
     office_id    INTEGER    COMMENT 'Уникальный идентификатор Офиса' ,
+    PRIMARY KEY (user_id, office_id)
 );
 COMMENT ON TABLE User_Office IS 'join-таблица для связи человека и офиса';
 
@@ -79,8 +79,6 @@ CREATE INDEX IX_Office_Id ON Office (id);
 CREATE INDEX IX_Office_Organization_Id ON Office (org_id);
 ALTER TABLE Office ADD FOREIGN KEY (org_id) REFERENCES Organization (id);
 
-
-CREATE INDEX IX_User_Office_Uniq_id ON User_Office (id);
 
 CREATE INDEX IX_User_Office_Id ON User_Office (office_id);
 ALTER TABLE User_Office ADD FOREIGN KEY (office_id) REFERENCES Office (id);
