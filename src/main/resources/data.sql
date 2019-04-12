@@ -1,15 +1,21 @@
-INSERT INTO Organization (id, name, inn, kpp, is_active) VALUES (1, 'Яндекс', 13243243, 1232433, true);
+CREATE SEQUENCE user_id;
+CREATE SEQUENCE org_id;
+CREATE SEQUENCE office_id;
+CREATE SEQUENCE doc_id;
 
-INSERT INTO Organization (id, name, inn, kpp, is_active) VALUES (2, 'Сбербанк', 3634643, 8523963, true);
 
-INSERT INTO Office (id, organization_id, name, address, is_active) VALUES (1, 1, 'Какой-то офис', 'Ленинградский проспект, 17', true);
+INSERT INTO Organization (id, version, name, inn, kpp, is_active) VALUES (org_id.nextval, 0, 'Яндекс', 13243243, 1232433, true);
 
-INSERT INTO Office (id,organization_id, name, address, is_active) VALUES (2, 2,  'Яндекс Главный офис', 'ул. Льва Толстого, 16', true);
+INSERT INTO Organization (id, version, name, inn, kpp, is_active) VALUES (org_id.nextval, 0, 'Сбербанк', 16346123, 73471247, true);
 
-INSERT INTO User (id, office_id, first_name, second_name, position) VALUES (1, 2, 'Иван', 'Симонов', 'Администратор');
+INSERT INTO Office (id, version, org_id, name, address, is_active) VALUES (office_id.nextval, 0, org_id.currval,  'Яндекс Главный офис', 'ул. Льва Толстого, 16', true);
 
-INSERT INTO User (id, office_id, first_name, second_name, position) VALUES (2, 2, 'Олег', 'Петров', 'Старший тестировщик');
+INSERT INTO User (id, version, first_name, second_name, position) VALUES (user_id.nextval, 0, 'Олег', 'Петров', 'Старший тестировщик');
 
-INSERT INTO Doc (code, name) VALUES (21, 'Паспорт гражданина РФ');
+INSERT INTO User_Office (user_id, office_id) VALUES (user_id.currval, office_id.currval);
 
-INSERT INTO Country (code, name) VALUES (643, 'Российская Федерация');
+INSERT INTO Doc_Type (code, version, name) VALUES (21, 0, 'Паспорт гражданина РФ');
+
+INSERT INTO Doc (id, version, code, user_id) VALUES (doc_id.nextval, 0, 21, user_id.currval);
+
+INSERT INTO Country (code, version, name) VALUES (643, 0, 'Российская Федерация');

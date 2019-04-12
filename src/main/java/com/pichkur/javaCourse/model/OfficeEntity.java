@@ -6,17 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.FetchType;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@Table(name = "office")
 public class OfficeEntity {
 
     /**
@@ -25,6 +25,9 @@ public class OfficeEntity {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @Version
+    private Integer version;
 
     /**
      *Название офиса
@@ -46,10 +49,13 @@ public class OfficeEntity {
      */
     private Boolean isActive;
 
-    /**
-     * Организация, которой принадлежит офис
-     */
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "organization_id")
-    private OrganizationEntity organization;
+    @ManyToMany(mappedBy = "offices")
+    private List<UserEntity> users;
+
+    public List<UserEntity> getUsers() {
+        if(users == null) {
+            users = new ArrayList<>();
+        }
+        return users;
+    }
 }
