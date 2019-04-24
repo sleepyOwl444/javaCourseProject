@@ -14,9 +14,17 @@ import java.util.List;
 @RequestMapping("/api/countries")
 public class CountryController {
 
-    @Autowired
     private CountryService countryService;
 
+    @Autowired
+    public CountryController(CountryService countryService) {
+        this.countryService = countryService;
+    }
+
+    /**
+     * Получает список стран из справочника
+     * @return список стран
+     */
     @GetMapping
     public List<CountryEntity> getCountries(){
 

@@ -21,7 +21,7 @@ public class OfficeControllerTest {
     private OfficeService officeService;
 
     @InjectMocks
-    private OfficeController officeController = new OfficeController();
+    private OfficeController officeController = new OfficeController(officeService);
 
 
     @Test

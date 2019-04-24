@@ -14,9 +14,17 @@ import java.util.List;
 @RequestMapping("/api/docs")
 public class DocumentTypeController {
 
-    @Autowired
     private DocumentTypeService documentTypeService;
 
+    @Autowired
+    public DocumentTypeController(DocumentTypeService documentTypeService) {
+        this.documentTypeService = documentTypeService;
+    }
+
+    /**
+     * Получает справочник типов документов
+     * @return список типов документов
+     */
     @GetMapping
     public List<DocTypeEntity> getDocumentTypes() {
         return documentTypeService.getDocumentTypes();

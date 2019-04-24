@@ -12,32 +12,55 @@ import java.util.List;
 @RequestMapping(value = "/api/office")
 public class OfficeController {
 
+    private OfficeService officeService;
+
     @Autowired
-    private OfficeService officeSerice;
+    public OfficeController(OfficeService officeService) {
+        this.officeService = officeService;
+    }
 
 
+    /**
+     * Получает список офисов
+     * @return список офисов
+     */
     @GetMapping(value = "/list")
     public List<OfficeEntity> getOffices() {
 
-        return officeSerice.getOffices();
+        return officeService.getOffices();
     }
 
+    /**
+     * Получает запись о конкретном офисе по id
+     * @param id офиса, который хотим получить
+     * @return запись об офисе
+     */
     @GetMapping(value = "/{id}")
     public OfficeEntity getOfficeById(@PathVariable("id") Long id) {
 
-        return officeSerice.getOfficeById(id);
+        return officeService.getOfficeById(id);
     }
 
+    /**
+     * Обновляет запись об офисе
+     * @param office обновленный вариант офиса
+     * @return сообщение об успехе или неуспехе обновления
+     */
     @PostMapping(value = "/update")
     public String updateOffice(@RequestBody OfficeEntity office) {
 
-        return officeSerice.updateOffice(office);
+        return officeService.updateOffice(office);
     }
 
+    /**
+     * Сохраняет новый офис
+     * @param office, который хотим сохранить
+     * @return сообщение об успехе или неуспехе сохранения
+     */
     @PostMapping(value = "/save")
     public String saveOffice(@RequestBody OfficeEntity office) {
 
-        return officeSerice.saveOffice(office);
+        return officeService.saveOffice(office);
     }
 
 }

@@ -24,7 +24,7 @@ public class CountryControllerTest {
     private CountryService countryService;
 
     @InjectMocks
-    private CountryController countryController = new CountryController();
+    private CountryController countryController = new CountryController(countryService);
 
     @Test
     public void shouldCallGetCountriesMethod() {
