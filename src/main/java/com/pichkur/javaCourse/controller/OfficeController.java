@@ -3,7 +3,6 @@ package com.pichkur.javaCourse.controller;
 import com.pichkur.javaCourse.interfaces.OfficeSerice;
 
 import com.pichkur.javaCourse.model.OfficeEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,13 +29,13 @@ public class OfficeController {
     }
 
     @PostMapping(value = "/update")
-    public SimpleResponse<String> updateOffice() {
+    public String updateOffice() {
 
         return officeSerice.updateOffice();
     }
 
     @PostMapping(value = "/save")
-    public SimpleResponse<String> saveOffice() {
+    public String saveOffice() {
 
         return officeSerice.saveOffice();
     }

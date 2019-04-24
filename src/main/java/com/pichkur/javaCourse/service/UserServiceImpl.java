@@ -19,7 +19,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserEntity> getUsers() {
         List<UserEntity> users = new ArrayList<>();
-        users.add(new UserEntity());
+        Set<OfficeEntity> officeEntities = new HashSet<>();
+        users.add(new UserEntity(Long.valueOf(1), Long.valueOf(0), "Иван", "Соколов", "Владимирович",
+                "администратор", "11111" ,new DocEntity(), officeEntities));
+        users.add(new UserEntity(Long.valueOf(2), Long.valueOf(0), "Петр", "Ивочкин", "Андреевич",
+                "", "", new DocEntity(), officeEntities));
         return users;
     }
 

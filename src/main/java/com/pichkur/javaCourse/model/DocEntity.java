@@ -15,11 +15,11 @@ import java.util.Date;
 public class DocEntity {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     private Date date;
 
@@ -30,4 +30,9 @@ public class DocEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+    public DocEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 }

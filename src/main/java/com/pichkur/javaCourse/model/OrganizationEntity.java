@@ -20,11 +20,11 @@ public class OrganizationEntity {
      * Уникальный идентификатор
      */
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     /**
      * Название организации
@@ -39,12 +39,12 @@ public class OrganizationEntity {
     /**
      * ИНН
      */
-    private Integer inn;
+    private String inn;
 
     /**
      * КПП
      */
-    private Integer kpp;
+    private String kpp;
 
     /**
      * Адрес организации
@@ -67,4 +67,9 @@ public class OrganizationEntity {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "org_id")
     private List<OfficeEntity> offices;
+
+    public OrganizationEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 }

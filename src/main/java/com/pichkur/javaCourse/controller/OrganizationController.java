@@ -21,18 +21,18 @@ public class OrganizationController {
         return organizationService.getOrganizations();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public OrganizationEntity getOrganizationById(@PathVariable("id") Long id) {
         return organizationService.getOrganizationById(id);
     }
 
     @PostMapping("/update")
-    public SimpleResponse<String> updateOrganization() {
+    public String updateOrganization() {
         return organizationService.updateOrganization();
     }
 
     @PostMapping("/save")
-    public SimpleResponse<String> saveOrganization() {
+    public String saveOrganization() {
         return organizationService.saveOrganization();
     }
 

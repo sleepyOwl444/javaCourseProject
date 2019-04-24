@@ -15,7 +15,9 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public List<CountryEntity> getCountries() {
         List<CountryEntity> countries = new ArrayList<>();
-        countries.add(new CountryEntity());
+        List<UserEntity> users = new ArrayList<>();
+        countries.add(new CountryEntity(Long.valueOf(1), Long.valueOf(0)));
+        countries.add(new CountryEntity(Long.valueOf(2), Long.valueOf(0), "643", "Российская Федерация", users));
         return countries;
     }
 }

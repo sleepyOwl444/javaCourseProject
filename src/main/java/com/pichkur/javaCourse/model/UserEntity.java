@@ -19,7 +19,7 @@ import java.util.Set;
 public class UserEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Version
@@ -55,6 +55,11 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "office_id")
     )
     private Set<OfficeEntity> offices;
+
+    public UserEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 
     public void addOffice(OfficeEntity office) {
         offices.add(office);

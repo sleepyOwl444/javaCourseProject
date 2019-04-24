@@ -18,11 +18,11 @@ import java.util.List;
 public class DocTypeEntity {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     private String code;
 
@@ -31,4 +31,9 @@ public class DocTypeEntity {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "code")
     private List<DocEntity> documents;
+
+    public DocTypeEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 }

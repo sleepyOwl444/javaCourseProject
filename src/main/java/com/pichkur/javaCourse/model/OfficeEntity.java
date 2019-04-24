@@ -23,11 +23,11 @@ public class OfficeEntity {
      * Уникальный идентификатор
      */
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     /**
      *Название офиса
@@ -51,6 +51,11 @@ public class OfficeEntity {
 
     @ManyToMany(mappedBy = "offices")
     private List<UserEntity> users;
+
+    public OfficeEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 
     public List<UserEntity> getUsers() {
         if(users == null) {

@@ -19,11 +19,11 @@ import java.util.List;
 public class CountryEntity {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     private String code;
 
@@ -32,4 +32,9 @@ public class CountryEntity {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "citizenship_code")
     private List<UserEntity> users;
+
+    public CountryEntity(Long id, Long version) {
+        this.id = id;
+        this.version = version;
+    }
 }
