@@ -1,12 +1,16 @@
 package com.pichkur.javaCourse.service;
 
 import com.pichkur.javaCourse.interfaces.UserService;
+import com.pichkur.javaCourse.model.DocEntity;
+import com.pichkur.javaCourse.model.OfficeEntity;
 import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Service
@@ -21,17 +25,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity getUserById(Long id) {
-        return new UserEntity();
+        Set<OfficeEntity> officeEntities = new HashSet<>();
+        return new UserEntity(Long.valueOf(1), Long.valueOf(0), "Иван", "Соколов", "Владимирович",
+                "администратор", "11111" ,new DocEntity(), officeEntities);
     }
 
 
     @Override
-    public SimpleResponce<String> updateUser() {
-        return new SimpleResponce<>("success");
+    public String updateUser() {
+        return "success";
     }
 
     @Override
-    public SimpleResponce<String> saveUser() {
-        return new SimpleResponce<>("success");
+    public String saveUser() {
+        return "success";
     }
 }

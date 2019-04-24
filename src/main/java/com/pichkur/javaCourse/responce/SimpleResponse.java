@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SimpleResponce<T> {
+public class SimpleResponse<T> {
 
     private T result;
 }

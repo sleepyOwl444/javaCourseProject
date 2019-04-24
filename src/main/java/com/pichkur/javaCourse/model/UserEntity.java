@@ -20,10 +20,10 @@ public class UserEntity {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @Version
-    private Integer version;
+    private Long version;
 
     private String first_name;
 

@@ -2,8 +2,7 @@ package com.pichkur.javaCourse.service;
 
 import com.pichkur.javaCourse.interfaces.OrganizationService;
 import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,14 +27,14 @@ public class OrganizationServiceImpl implements OrganizationService {
 
 
     @Override
-    public SimpleResponce<String> updateOrganization() {
+    public SimpleResponse<String> updateOrganization() {
 
-        return new SimpleResponce<>("success");
+        return new SimpleResponse<>("success");
     }
 
     @Override
-    public SimpleResponce<String> saveOrganization() {
+    public SimpleResponse<String> saveOrganization() {
 
-        return new SimpleResponce<>("success");
+        return new SimpleResponse<>("success");
     }
 }

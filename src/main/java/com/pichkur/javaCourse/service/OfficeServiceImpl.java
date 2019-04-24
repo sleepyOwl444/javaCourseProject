@@ -3,7 +3,7 @@ package com.pichkur.javaCourse.service;
 
 import com.pichkur.javaCourse.interfaces.OfficeSerice;
 import com.pichkur.javaCourse.model.OfficeEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ public class OfficeServiceImpl implements OfficeSerice {
 
 
     @Override
-    public SimpleResponce<String> updateOffice() {
-        return new SimpleResponce<>("success");
+    public SimpleResponse<String> updateOffice() {
+        return new SimpleResponse<>("success");
     }
 
     @Override
-    public SimpleResponce<String> saveOffice() {
-        return new SimpleResponce<>("success");
+    public SimpleResponse<String> saveOffice() {
+        return new SimpleResponse<>("success");
     }
 }

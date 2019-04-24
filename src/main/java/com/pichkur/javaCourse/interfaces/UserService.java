@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.interfaces;
 
 import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public interface UserService {
 
     UserEntity getUserById(Long id);
 
-    SimpleResponce<String> updateUser();
+    String updateUser();
 
-    SimpleResponce<String> saveUser();
+    String saveUser();
 }

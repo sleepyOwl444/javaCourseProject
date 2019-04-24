@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.interfaces;
 
 import com.pichkur.javaCourse.model.OfficeEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +14,8 @@ public interface OfficeSerice {
 
     OfficeEntity getOfficeById(Long id);
 
-    SimpleResponce<String> updateOffice();
+    SimpleResponse<String> updateOffice();
 
-    SimpleResponce<String> saveOffice();
+    SimpleResponse<String> saveOffice();
 
 }

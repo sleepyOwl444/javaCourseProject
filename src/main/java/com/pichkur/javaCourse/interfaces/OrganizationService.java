@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.interfaces;
 
 import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.responce.SimpleResponce;
+import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +14,8 @@ public interface OrganizationService {
 
     OrganizationEntity getOrganizationById(Long id);
 
-    SimpleResponce<String> updateOrganization();
+    SimpleResponse<String> updateOrganization();
 
-    SimpleResponce<String> saveOrganization();
+    SimpleResponse<String> saveOrganization();
 
 }
