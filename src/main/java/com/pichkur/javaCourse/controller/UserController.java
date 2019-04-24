@@ -20,21 +20,25 @@ public class UserController {
 
     @GetMapping(value = "/list")
     public List<UserEntity> getUsers() {
+
         return userService.getUsers();
     }
 
     @GetMapping(value = "/{id}")
     public UserEntity getUserById(@PathVariable("id") Long id) {
+
         return userService.getUserById(id);
     }
 
     @PostMapping(value = "/update")
     public SimpleResponce<String> updateUser() {
+
         return userService.updateUser();
     }
 
     @PostMapping(value = "/save")
     public SimpleResponce<String> saveUser() {
+
         return userService.saveUser();
     }
 
