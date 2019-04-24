@@ -3,7 +3,6 @@ package com.pichkur.javaCourse.service;
 import com.pichkur.javaCourse.interfaces.OrganizationService;
 import com.pichkur.javaCourse.model.OfficeEntity;
 import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

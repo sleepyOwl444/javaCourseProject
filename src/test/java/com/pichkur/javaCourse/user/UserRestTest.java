@@ -2,7 +2,6 @@ package com.pichkur.javaCourse.user;
 
 
 import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

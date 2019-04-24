@@ -1,10 +1,9 @@
 package com.pichkur.javaCourse.service;
 
 
-import com.pichkur.javaCourse.interfaces.OfficeSerice;
+import com.pichkur.javaCourse.interfaces.OfficeService;
 import com.pichkur.javaCourse.model.OfficeEntity;
 import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import java.util.List;
 
 
 @Service
-public class OfficeServiceImpl implements OfficeSerice {
+public class OfficeServiceImpl implements OfficeService {
 
 
     @Override

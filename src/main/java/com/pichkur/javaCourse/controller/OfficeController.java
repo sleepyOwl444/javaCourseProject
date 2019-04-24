@@ -1,6 +1,6 @@
 package com.pichkur.javaCourse.controller;
 
-import com.pichkur.javaCourse.interfaces.OfficeSerice;
+import com.pichkur.javaCourse.interfaces.OfficeService;
 
 import com.pichkur.javaCourse.model.OfficeEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.List;
 public class OfficeController {
 
     @Autowired
-    private OfficeSerice officeSerice;
+    private OfficeService officeSerice;
 
 
     @GetMapping(value = "/list")
