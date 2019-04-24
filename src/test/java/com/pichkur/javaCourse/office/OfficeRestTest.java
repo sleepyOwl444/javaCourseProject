@@ -37,7 +37,7 @@ public class OfficeRestTest {
 
     @Test
     public void shouldUpdateOfficeAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<OfficeEntity> request = new HttpEntity<>(new OfficeEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/update", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");
@@ -45,7 +45,7 @@ public class OfficeRestTest {
 
     @Test
     public void shouldSaveOfficeAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<OfficeEntity> request = new HttpEntity<>(new OfficeEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/save", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");

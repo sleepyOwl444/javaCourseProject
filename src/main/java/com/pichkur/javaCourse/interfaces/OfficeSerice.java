@@ -14,8 +14,8 @@ public interface OfficeSerice {
 
     OfficeEntity getOfficeById(Long id);
 
-    String updateOffice();
+    String updateOffice(OfficeEntity office);
 
-    String saveOffice();
+    String saveOffice(OfficeEntity office);
 
 }

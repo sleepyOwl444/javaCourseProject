@@ -3,7 +3,6 @@ package com.pichkur.javaCourse.controller;
 
 import com.pichkur.javaCourse.interfaces.OrganizationService;
 import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,13 +26,13 @@ public class OrganizationController {
     }
 
     @PostMapping("/update")
-    public String updateOrganization() {
-        return organizationService.updateOrganization();
+    public String updateOrganization(@RequestBody OrganizationEntity organization) {
+        return organizationService.updateOrganization(organization);
     }
 
     @PostMapping("/save")
-    public String saveOrganization() {
-        return organizationService.saveOrganization();
+    public String saveOrganization(@RequestBody OrganizationEntity organization) {
+        return organizationService.saveOrganization(organization);
     }
 
 

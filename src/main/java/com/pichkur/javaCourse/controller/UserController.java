@@ -3,7 +3,6 @@ package com.pichkur.javaCourse.controller;
 
 import com.pichkur.javaCourse.interfaces.UserService;
 import com.pichkur.javaCourse.model.UserEntity;
-import com.pichkur.javaCourse.responce.SimpleResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,15 +32,15 @@ public class UserController {
     }
 
     @PostMapping(value = "/update")
-    public String updateUser() {
+    public String updateUser(@RequestBody UserEntity user) {
 
-        return userService.updateUser();
+        return userService.updateUser(user);
     }
 
     @PostMapping(value = "/save")
-    public String saveUser() {
+    public String saveUser(@RequestBody UserEntity user) {
 
-        return userService.saveUser();
+        return userService.saveUser(user);
     }
 
 

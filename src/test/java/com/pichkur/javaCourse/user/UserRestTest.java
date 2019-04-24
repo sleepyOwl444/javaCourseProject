@@ -41,7 +41,7 @@ public class UserRestTest {
 
     @Test
     public void shouldUpdateUserAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<UserEntity> request = new HttpEntity<>(new UserEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/update", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");
@@ -50,7 +50,7 @@ public class UserRestTest {
 
     @Test
     public void shouldSaveUserAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<UserEntity> request = new HttpEntity<>(new UserEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/save", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");

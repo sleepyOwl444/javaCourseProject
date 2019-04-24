@@ -29,15 +29,15 @@ public class OfficeController {
     }
 
     @PostMapping(value = "/update")
-    public String updateOffice() {
+    public String updateOffice(@RequestBody OfficeEntity office) {
 
-        return officeSerice.updateOffice();
+        return officeSerice.updateOffice(office);
     }
 
     @PostMapping(value = "/save")
-    public String saveOffice() {
+    public String saveOffice(@RequestBody OfficeEntity office) {
 
-        return officeSerice.saveOffice();
+        return officeSerice.saveOffice(office);
     }
 
 }

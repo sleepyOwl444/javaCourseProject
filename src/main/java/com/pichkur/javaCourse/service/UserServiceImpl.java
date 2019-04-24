@@ -36,12 +36,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public String updateUser() {
+    public String updateUser(UserEntity user) {
         return "success";
     }
 
     @Override
-    public String saveUser() {
+    public String saveUser(UserEntity user) {
         return "success";
     }
 }

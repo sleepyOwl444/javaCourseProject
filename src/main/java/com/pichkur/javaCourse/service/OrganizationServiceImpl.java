@@ -35,13 +35,13 @@ public class OrganizationServiceImpl implements OrganizationService {
 
 
     @Override
-    public String updateOrganization() {
+    public String updateOrganization(OrganizationEntity organization) {
 
         return "success";
     }
 
     @Override
-    public String saveOrganization() {
+    public String saveOrganization(OrganizationEntity organization) {
 
         return "success";
     }

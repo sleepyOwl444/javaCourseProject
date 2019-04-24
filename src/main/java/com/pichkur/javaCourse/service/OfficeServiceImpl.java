@@ -36,12 +36,12 @@ public class OfficeServiceImpl implements OfficeSerice {
 
 
     @Override
-    public String updateOffice() {
+    public String updateOffice(OfficeEntity office) {
         return "success";
     }
 
     @Override
-    public String saveOffice() {
+    public String saveOffice(OfficeEntity office) {
         return "success";
     }
 }

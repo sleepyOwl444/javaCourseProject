@@ -14,8 +14,8 @@ public interface OrganizationService {
 
     OrganizationEntity getOrganizationById(Long id);
 
-    String updateOrganization();
+    String updateOrganization(OrganizationEntity organization);
 
-    String saveOrganization();
+    String saveOrganization(OrganizationEntity organization);
 
 }

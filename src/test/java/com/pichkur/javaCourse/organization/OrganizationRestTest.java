@@ -38,7 +38,7 @@ public class OrganizationRestTest {
 
     @Test
     public void shouldUpdateOrganizationAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<OrganizationEntity> request = new HttpEntity<>(new OrganizationEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/update", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");
@@ -46,7 +46,7 @@ public class OrganizationRestTest {
 
     @Test
     public void shouldSaveOrganizationAndReturnSuccess() {
-        HttpEntity<String> request = new HttpEntity<>("");
+        HttpEntity<OrganizationEntity> request = new HttpEntity<>(new OrganizationEntity());
         ResponseEntity<String> response = restTemplate.postForEntity(url + "/save", request, String.class);
         Assert.assertEquals(response.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(response.getBody(), "success");

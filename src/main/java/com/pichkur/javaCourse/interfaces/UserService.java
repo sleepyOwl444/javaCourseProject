@@ -14,7 +14,7 @@ public interface UserService {
 
     UserEntity getUserById(Long id);
 
-    String updateUser();
+    String updateUser(UserEntity user);
 
-    String saveUser();
+    String saveUser(UserEntity user);
 }
