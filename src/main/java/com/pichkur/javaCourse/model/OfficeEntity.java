@@ -26,6 +26,9 @@ public class OfficeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Номер версии
+     */
     @Version
     private Long version;
 
@@ -49,6 +52,9 @@ public class OfficeEntity {
      */
     private Boolean isActive;
 
+    /**
+     * Список сотрудников в офисе
+     */
     @ManyToMany(mappedBy = "offices")
     private List<UserEntity> users;
 

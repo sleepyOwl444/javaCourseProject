@@ -15,6 +15,9 @@ import java.util.Set;
 @Service
 public class UserServiceImpl implements UserService {
 
+    /**
+     * @return список сотрудников
+     */
     @Override
     public List<UserEntity> getUsers() {
         List<UserEntity> users = new ArrayList<>();
@@ -26,6 +29,11 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
+    /**
+     * Получаем сотрудика по id
+     * @param id сотрудника
+     * @return запись о сотруднике
+     */
     @Override
     public UserEntity getUserById(Long id) {
         Set<OfficeEntity> officeEntities = new HashSet<>();
@@ -33,12 +41,21 @@ public class UserServiceImpl implements UserService {
                 "администратор", "11111" ,new DocEntity(), officeEntities);
     }
 
-
+    /**
+     * Обновляем запись о сотруднике
+     * @param user новые данные о сотруднике
+     * @return сообщение об успехе или неудаче
+     */
     @Override
     public String updateUser(UserEntity user) {
         return "success";
     }
 
+    /**
+     *Сохраняем новую запись о сотруднике
+     * @param user новые данные о сотруднике
+     * @return сообщение об успехе или неудаче
+     */
     @Override
     public String saveUser(UserEntity user) {
         return "success";

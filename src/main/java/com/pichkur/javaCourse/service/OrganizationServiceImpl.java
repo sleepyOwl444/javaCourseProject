@@ -12,6 +12,9 @@ import java.util.List;
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
 
+    /**
+     * @return список организаций
+     */
     @Override
     public List<OrganizationEntity> getOrganizations() {
         List<OrganizationEntity> organizations = new ArrayList<>();
@@ -25,6 +28,11 @@ public class OrganizationServiceImpl implements OrganizationService {
         return organizations;
     }
 
+    /**
+     * Получаем организвацию по id
+     * @param id организации
+     * @return запись об организации
+     */
     @Override
     public OrganizationEntity getOrganizationById(Long id) {
         List<OfficeEntity> offices = new ArrayList<>();
@@ -32,13 +40,22 @@ public class OrganizationServiceImpl implements OrganizationService {
                 "2545", "2435", "адрес Яндекса", "22222", true, offices);
     }
 
-
+    /**
+     * Обновляем запись об организации
+     * @param organization новые данные об организации
+     * @return сообщение об успехе или неудаче
+     */
     @Override
     public String updateOrganization(OrganizationEntity organization) {
 
         return "success";
     }
 
+    /**
+     * Сохраняем новую запись об организации
+     * @param organization новая организация
+     * @return сообщение об успехе или неудаче
+     */
     @Override
     public String saveOrganization(OrganizationEntity organization) {
 

@@ -12,6 +12,10 @@ import java.util.List;
 @Service
 public class DocumentTypeServiceImpl implements DocumentTypeService {
 
+    /**
+     * Получаем типы документов из справочника
+     * @return типы документов
+     */
     @Override
     public List<DocTypeEntity> getDocumentTypes() {
         List<DocTypeEntity> docTypes = new ArrayList<>();

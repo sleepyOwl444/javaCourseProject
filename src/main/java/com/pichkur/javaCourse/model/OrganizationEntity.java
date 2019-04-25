@@ -23,6 +23,9 @@ public class OrganizationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Номер версии
+     */
     @Version
     private Long version;
 

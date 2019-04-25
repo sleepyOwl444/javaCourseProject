@@ -12,6 +12,10 @@ import java.util.List;
 @Service
 public class CountryServiceImpl implements CountryService {
 
+    /**
+     * Получаем список стран из справочника
+     * @return список стран
+     */
     @Override
     public List<CountryEntity> getCountries() {
         List<CountryEntity> countries = new ArrayList<>();

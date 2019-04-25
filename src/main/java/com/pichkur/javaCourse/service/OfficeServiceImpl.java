@@ -13,7 +13,9 @@ import java.util.List;
 @Service
 public class OfficeServiceImpl implements OfficeService {
 
-
+    /**
+     * @return список офисов
+     */
     @Override
     public List<OfficeEntity> getOffices() {
         List<OfficeEntity> offices = new ArrayList<>();
@@ -26,6 +28,11 @@ public class OfficeServiceImpl implements OfficeService {
     }
 
 
+    /**
+     * Получаем конкретный офис по его id
+     * @param id офиса
+     * @return запись об офисе
+     */
     @Override
     public OfficeEntity getOfficeById(Long id) {
         List<UserEntity> users = new ArrayList<>();
@@ -33,12 +40,21 @@ public class OfficeServiceImpl implements OfficeService {
                 "11111", true, users);
     }
 
-
+    /**
+     * Обновляем запись об офисе
+     * @param office
+     * @return сообщение об успехе или неудаче операции
+     */
     @Override
     public String updateOffice(OfficeEntity office) {
         return "success";
     }
 
+    /**
+     * Сохраняем новую запись об офисе
+     * @param office
+     * @return сообщение об успехе или неудаче операции
+     */
     @Override
     public String saveOffice(OfficeEntity office) {
         return "success";

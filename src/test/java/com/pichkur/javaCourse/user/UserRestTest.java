@@ -26,7 +26,7 @@ public class UserRestTest {
         ResponseEntity<UserEntity[]> users = restTemplate.getForEntity(url + "/list", UserEntity[].class);
         Assert.assertEquals(users.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(users.getBody().length, 2);
-        Assert.assertEquals(users.getBody()[1].getSecond_name(), "Ивочкин");
+        Assert.assertEquals(users.getBody()[1].getSecondName(), "Ивочкин");
     }
 
     @Test
@@ -35,7 +35,7 @@ public class UserRestTest {
         ResponseEntity<UserEntity> user = restTemplate.getForEntity(url + "/{id}", UserEntity.class, 1);
         UserEntity entity = user.getBody();
         Assert.assertEquals(user.getStatusCode(), HttpStatus.OK);
-        Assert.assertEquals(entity.getFirst_name(), "Иван");
+        Assert.assertEquals(entity.getFirstName(), "Иван");
     }
 
     @Test

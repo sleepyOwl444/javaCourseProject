@@ -18,23 +18,47 @@ import java.util.Set;
 @Table(name = "user")
 public class UserEntity {
 
+    /**
+     * Уникальный идентификатор
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Номер версии
+     */
     @Version
     private Long version;
 
-    private String first_name;
+    /**
+     * Имя сотрудника
+     */
+    private String firstName;
 
-    private String second_name;
+    /**
+     * Фамилия сотрудника
+     */
+    private String secondName;
 
-    private String middle_name;
+    /**
+     * Отчество сотрудника
+     */
+    private String middleName;
 
+    /**
+     * Должность сотрудника
+     */
     private String position;
 
+    /**
+     * Телефон сотрудника
+     */
     private String phone;
 
+    /**
+     * Документ, выданный человеку
+     */
     @OneToOne(
             mappedBy = "user",
             fetch = FetchType.LAZY,
@@ -43,6 +67,9 @@ public class UserEntity {
     )
     private DocEntity document;
 
+    /**
+     * Список офисов, в которых работает человек
+     */
     @ManyToMany(
             cascade = {
                     CascadeType.PERSIST,
