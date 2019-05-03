@@ -2,6 +2,7 @@ package com.pichkur.javaCourse.country;
 
 
 import com.pichkur.javaCourse.model.CountryEntity;
+import com.pichkur.javaCourse.model.view.CountryView;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class CountryRestTest {
 
     @Test
     public void shouldReturnListOfCounties() {
-        ResponseEntity<CountryEntity[]> countries = restTemplate.getForEntity(url, CountryEntity[].class);
+        ResponseEntity<CountryView[]> countries = restTemplate.getForEntity(url, CountryView[].class);
         Assert.assertEquals(countries.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals(countries.getBody().length, 2);
         Assert.assertEquals(countries.getBody()[1].getCode(), "643");

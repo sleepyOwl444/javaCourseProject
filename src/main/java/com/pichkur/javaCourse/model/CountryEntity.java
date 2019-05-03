@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "country")
+@Table(name = "Country")
 public class CountryEntity {
 
     /**

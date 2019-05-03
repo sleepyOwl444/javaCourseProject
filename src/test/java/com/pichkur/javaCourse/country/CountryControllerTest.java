@@ -4,6 +4,7 @@ package com.pichkur.javaCourse.country;
 import com.pichkur.javaCourse.controller.CountryController;
 import com.pichkur.javaCourse.interfaces.CountryService;
 import com.pichkur.javaCourse.model.CountryEntity;
+import com.pichkur.javaCourse.model.view.CountryView;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,8 +29,8 @@ public class CountryControllerTest {
 
     @Test
     public void shouldCallGetCountriesMethod() {
-        List<CountryEntity> countries = new ArrayList<>();
-        countries.add(new CountryEntity(Long.valueOf(1), Long.valueOf(0)));
+        List<CountryView> countries = new ArrayList<>();
+        countries.add(new CountryView(Long.valueOf(1), "643", "Российская Федерация"));
         when(countryService.getCountries()).thenReturn(countries);
         Assert.assertEquals(countryController.getCountries(), countries);
         verify(countryService).getCountries();

@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.controller;
 
 import com.pichkur.javaCourse.interfaces.CountryService;
-import com.pichkur.javaCourse.model.CountryEntity;
+import com.pichkur.javaCourse.model.view.CountryView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping("/api/countries")
+@RequestMapping(value = "/api/countries", produces = APPLICATION_JSON_VALUE)
 public class CountryController {
 
     private CountryService countryService;
+    private String s;
 
     @Autowired
     public CountryController(CountryService countryService) {
@@ -26,8 +28,8 @@ public class CountryController {
      * @return список стран
      */
     @GetMapping
-    public List<CountryEntity> getCountries(){
-
+    public List<CountryView> getCountries(){
+        System.out.println(s);
         return countryService.getCountries();
     }
 }
