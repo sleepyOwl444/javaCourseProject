@@ -6,9 +6,11 @@ CREATE SEQUENCE doc_id;
 
 INSERT INTO Organization (id, version, name, inn, kpp, is_active) VALUES (org_id.nextval, 0, 'Яндекс', 13243243, 1232433, true);
 
-INSERT INTO Organization (id, version, name, inn, kpp, is_active) VALUES (org_id.nextval, 0, 'Сбербанк', 16346123, 73471247, true);
-
 INSERT INTO Office (id, version, org_id, name, address, is_active) VALUES (office_id.nextval, 0, org_id.currval,  'Яндекс Главный офис', 'ул. Льва Толстого, 16', true);
+
+INSERT INTO Office (id, version, org_id, name, address, is_active) VALUES (office_id.nextval, 0, org_id.currval,  'Яндекс Малый офис', 'ул. Льва Толстого, 20', false);
+
+INSERT INTO Organization (id, version, name, inn, kpp, is_active) VALUES (org_id.nextval, 0, 'Сбербанк', 16346123, 73471247, true);
 
 INSERT INTO User (id, version, first_name, second_name, position) VALUES (user_id.nextval, 0, 'Олег', 'Петров', 'Старший тестировщик');
 

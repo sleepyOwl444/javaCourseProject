@@ -16,7 +16,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class CountryController {
 
     private CountryService countryService;
-    private String s;
 
     @Autowired
     public CountryController(CountryService countryService) {
@@ -29,7 +28,6 @@ public class CountryController {
      */
     @GetMapping
     public List<CountryView> getCountries(){
-        System.out.println(s);
         return countryService.getCountries();
     }
 }

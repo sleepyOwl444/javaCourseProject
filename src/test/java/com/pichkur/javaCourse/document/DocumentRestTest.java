@@ -1,6 +1,5 @@
 package com.pichkur.javaCourse.document;
 
-import com.pichkur.javaCourse.model.CountryEntity;
 import com.pichkur.javaCourse.model.DocTypeEntity;
 import org.junit.Assert;
 import org.junit.Test;

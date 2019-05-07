@@ -23,22 +23,26 @@ public class CountryEntity {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     /**
      * Номер версии
      */
     @Version
+    @Column(name = "version")
     private Long version;
 
     /**
      * Код страны
      */
+    @Column(name = "code")
     private String code;
 
     /**
      * Название страны
      */
+    @Column(name = "name")
     private String name;
 
     /**

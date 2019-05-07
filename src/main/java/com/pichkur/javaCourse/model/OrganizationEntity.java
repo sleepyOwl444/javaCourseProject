@@ -67,12 +67,24 @@ public class OrganizationEntity {
     /**
      * Список офисов, принадлежащих организации
      */
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "org_id")
+    @OneToMany(
+            mappedBy = "organization",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<OfficeEntity> offices;
 
     public OrganizationEntity(Long id, Long version) {
         this.id = id;
         this.version = version;
+    }
+    public void addOffice(OfficeEntity office) {
+        getOffices().add(office);
+        office.setOrganization(this);
+    }
+
+    public void removeOffice(OfficeEntity office) {
+        getOffices().remove(office);
+        office.setOrganization(null);
     }
 }

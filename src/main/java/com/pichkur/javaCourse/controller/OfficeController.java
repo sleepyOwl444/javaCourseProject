@@ -3,6 +3,8 @@ package com.pichkur.javaCourse.controller;
 import com.pichkur.javaCourse.interfaces.OfficeService;
 
 import com.pichkur.javaCourse.model.OfficeEntity;
+import com.pichkur.javaCourse.model.view.AnswerView;
+import com.pichkur.javaCourse.model.view.OfficeView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,9 +27,13 @@ public class OfficeController {
      * @return список офисов
      */
     @GetMapping(value = "/list")
-    public List<OfficeEntity> getOffices() {
-
-        return officeService.getOffices();
+    @ResponseBody
+    public List<OfficeView> getOffices(@RequestParam Long orgId,
+                                       @RequestParam(required = false) String name,
+                                       @RequestParam(required = false) String phone,
+                                       @RequestParam(required = false) Boolean isActive
+    ) {
+        return officeService.getOffices(orgId, name, phone, isActive);
     }
 
     /**
@@ -36,7 +42,7 @@ public class OfficeController {
      * @return запись об офисе
      */
     @GetMapping(value = "/{id}")
-    public OfficeEntity getOfficeById(@PathVariable("id") Long id) {
+    public OfficeView getOfficeById(@PathVariable("id") Long id) {
 
         return officeService.getOfficeById(id);
     }
@@ -58,7 +64,7 @@ public class OfficeController {
      * @return сообщение об успехе или неуспехе сохранения
      */
     @PostMapping(value = "/save")
-    public String saveOffice(@RequestBody OfficeEntity office) {
+    public AnswerView saveOffice(@RequestBody OfficeView office) {
 
         return officeService.saveOffice(office);
     }

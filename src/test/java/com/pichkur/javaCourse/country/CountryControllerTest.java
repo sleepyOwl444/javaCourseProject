@@ -3,7 +3,6 @@ package com.pichkur.javaCourse.country;
 
 import com.pichkur.javaCourse.controller.CountryController;
 import com.pichkur.javaCourse.interfaces.CountryService;
-import com.pichkur.javaCourse.model.CountryEntity;
 import com.pichkur.javaCourse.model.view.CountryView;
 import org.junit.Assert;
 import org.junit.Test;

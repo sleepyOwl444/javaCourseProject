@@ -59,7 +59,8 @@ CREATE TABLE IF NOT EXISTS Doc (
 COMMENT ON TABLE Doc IS 'Информация по выданным документам';
 
 CREATE TABLE IF NOT EXISTS Country (
-    code    VARCHAR(20) NOT NULL    COMMENT 'Код страны, уникальный идентификатор'    PRIMARY KEY ,
+    id    INTEGER NOT NULL    COMMENT 'Уникальный идентификатор'    PRIMARY KEY AUTO_INCREMENT ,
+    code    VARCHAR(20) NOT NULL    COMMENT 'Код страны, уникальный идентификатор' ,
     version    INTEGER NOT NULL     COMMENT 'Служебное поле hibernate',
     name    VARCHAR(50)    COMMENT 'Название страны'
 );
@@ -102,4 +103,4 @@ ALTER TABLE Doc ADD FOREIGN KEY (code) REFERENCES Doc_Type (code);
 CREATE INDEX IX_Doc_User_Id ON Doc (user_id);
 ALTER TABLE Doc ADD FOREIGN KEY (user_id) REFERENCES User (id);
 
-CREATE INDEX IX_Country_Code ON Country (code);
+CREATE INDEX IX_Country_Id ON Country (id);

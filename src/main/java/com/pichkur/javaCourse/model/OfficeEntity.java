@@ -1,6 +1,7 @@
 package com.pichkur.javaCourse.model;
 
 
+import com.pichkur.javaCourse.model.view.OfficeView;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "office")
+@Table(name = "Office")
 public class OfficeEntity {
 
     /**
@@ -52,6 +53,10 @@ public class OfficeEntity {
      */
     private Boolean isActive;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "org_id")
+    private OrganizationEntity organization;
+
     /**
      * Список сотрудников в офисе
      */
@@ -61,6 +66,20 @@ public class OfficeEntity {
     public OfficeEntity(Long id, Long version) {
         this.id = id;
         this.version = version;
+    }
+
+    public OfficeEntity(Long id, String name, Boolean isActive) {
+        this.id = id;
+        this.name = name;
+        this.isActive = isActive;
+    }
+
+    public OfficeEntity(OfficeView view) {
+        this.id = view.getId();
+        this.name = view.getName();
+        this.address = view.getAddress();
+        this.phone = view.getPhone();
+        this.isActive = view.getIsActive();
     }
 
     public List<UserEntity> getUsers() {
