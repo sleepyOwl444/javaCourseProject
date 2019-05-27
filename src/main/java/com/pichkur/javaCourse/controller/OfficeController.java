@@ -27,11 +27,10 @@ public class OfficeController {
      * @return список офисов
      */
     @GetMapping(value = "/list")
-    @ResponseBody
-    public List<OfficeView> getOffices(@RequestParam Long orgId,
-                                       @RequestParam(required = false) String name,
-                                       @RequestParam(required = false) String phone,
-                                       @RequestParam(required = false) Boolean isActive
+    public List<OfficeView> getOffices(@RequestParam("orgId") Long orgId,
+                                       @RequestParam(name = "name", required = false) String name,
+                                       @RequestParam(name = "phone", required = false) String phone,
+                                       @RequestParam(name = "isActive", required = false) Boolean isActive
     ) {
         return officeService.getOffices(orgId, name, phone, isActive);
     }
@@ -52,11 +51,11 @@ public class OfficeController {
      * @param office обновленный вариант офиса
      * @return сообщение об успехе или неуспехе обновления
      */
-    @PostMapping(value = "/update")
-    public String updateOffice(@RequestBody OfficeEntity office) {
-
-        return officeService.updateOffice(office);
-    }
+//    @PostMapping(value = "/update")
+//    public String updateOffice(@RequestBody OfficeEntity office) {
+//
+//        return officeService.updateOffice(office);
+//    }
 
     /**
      * Сохраняет новый офис

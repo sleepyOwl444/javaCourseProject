@@ -45,7 +45,7 @@ public class UserView {
     /**
      * Телефон сотрудника
      */
-    @Size(max = 50)
+    @Size(max = 20)
     private String phone;
 
    @Size(max = 50)

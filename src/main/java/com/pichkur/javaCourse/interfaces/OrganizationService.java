@@ -1,6 +1,6 @@
 package com.pichkur.javaCourse.interfaces;
 
-import com.pichkur.javaCourse.model.OrganizationEntity;
+import com.pichkur.javaCourse.model.view.OrganizationView;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,12 +9,12 @@ import java.util.List;
 @Service
 public interface OrganizationService {
 
-    List<OrganizationEntity> getOrganizations();
+    List<OrganizationView> getOrganizations(String name, String inn, Boolean isActive);
 
-    OrganizationEntity getOrganizationById(Long id);
+    OrganizationView getOrganizationById(Long id);
 
-    String updateOrganization(OrganizationEntity organization);
-
-    String saveOrganization(OrganizationEntity organization);
+//    String updateOrganization(OrganizationEntity organization);
+//
+//    String saveOrganization(OrganizationEntity organization);
 
 }

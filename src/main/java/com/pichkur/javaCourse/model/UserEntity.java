@@ -67,6 +67,10 @@ public class UserEntity {
     )
     private DocEntity document;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "code")
+    private CountryEntity country;
+
     /**
      * Список офисов, в которых работает человек
      */

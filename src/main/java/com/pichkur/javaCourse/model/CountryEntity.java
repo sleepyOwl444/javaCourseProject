@@ -48,8 +48,11 @@ public class CountryEntity {
     /**
      * Список граждан страны
      */
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "citizenship_code")
+    @OneToMany(
+            mappedBy = "country",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<UserEntity> users;
 
     public CountryEntity(Long id, Long version) {

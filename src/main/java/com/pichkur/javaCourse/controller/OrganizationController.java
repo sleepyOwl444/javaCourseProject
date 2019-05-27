@@ -2,7 +2,7 @@ package com.pichkur.javaCourse.controller;
 
 
 import com.pichkur.javaCourse.interfaces.OrganizationService;
-import com.pichkur.javaCourse.model.OrganizationEntity;
+import com.pichkur.javaCourse.model.view.OrganizationView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +24,10 @@ public class OrganizationController {
      * @return список организаций
      */
     @GetMapping("/list")
-    public List<OrganizationEntity> getOrganizations(){
-        return organizationService.getOrganizations();
+    public List<OrganizationView> getOrganizations(@RequestParam("name") String name,
+                                                   @RequestParam(name = "inn", required = false) String inn,
+                                                   @RequestParam(name = "isActive", required = false) Boolean isActive){
+        return organizationService.getOrganizations(name, inn, isActive);
     }
 
     /**
@@ -34,29 +36,29 @@ public class OrganizationController {
      * @return запись об организации
      */
     @GetMapping("/{id}")
-    public OrganizationEntity getOrganizationById(@PathVariable("id") Long id) {
+    public OrganizationView getOrganizationById(@PathVariable("id") Long id) {
         return organizationService.getOrganizationById(id);
     }
-
-    /**
-     * Обновляет запись об организации
-     * @param organization обновленный вариант организации
-     * @return сообщение об успехе или неуспехе обновления
-     */
-    @PostMapping("/update")
-    public String updateOrganization(@RequestBody OrganizationEntity organization) {
-        return organizationService.updateOrganization(organization);
-    }
-
-    /**
-     * Сохраняет новую организацию
-     * @param organization, которую хотим сохранить
-     * @return сообщение об успехе или неуспехе сохранения
-     */
-    @PostMapping("/save")
-    public String saveOrganization(@RequestBody OrganizationEntity organization) {
-        return organizationService.saveOrganization(organization);
-    }
+//
+//    /**
+//     * Обновляет запись об организации
+//     * @param organization обновленный вариант организации
+//     * @return сообщение об успехе или неуспехе обновления
+//     */
+//    @PostMapping("/update")
+//    public String updateOrganization(@RequestBody OrganizationEntity organization) {
+//        return organizationService.updateOrganization(organization);
+//    }
+//
+//    /**
+//     * Сохраняет новую организацию
+//     * @param organization, которую хотим сохранить
+//     * @return сообщение об успехе или неуспехе сохранения
+//     */
+//    @PostMapping("/save")
+//    public String saveOrganization(@RequestBody OrganizationEntity organization) {
+//        return organizationService.saveOrganization(organization);
+//    }
 
 
 }
