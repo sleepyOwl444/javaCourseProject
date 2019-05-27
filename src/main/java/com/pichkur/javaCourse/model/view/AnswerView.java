@@ -11,5 +11,5 @@ import lombok.Setter;
 @Setter
 public class AnswerView {
 
-    private String answer;
+    private String result;
 }
