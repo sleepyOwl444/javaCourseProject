@@ -32,17 +32,6 @@ public class JSONResponceWrapper implements ResponseBodyAdvice<Object> {
         else {return new WrapperError<Object>(body);}
     }
 
-
-    @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-    @JsonSerialize
-    private class Wrapper<T> {
-        private final List<T> data;
-
-        public Wrapper(List<T> data) {
-            this.data = data;
-        }
-    }
-
     @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
     @JsonSerialize
     private class WrapperSuccess<T> {
