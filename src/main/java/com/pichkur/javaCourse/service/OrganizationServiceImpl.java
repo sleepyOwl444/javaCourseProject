@@ -3,13 +3,11 @@ package com.pichkur.javaCourse.service;
 import com.pichkur.javaCourse.dao.interfaces.OrganizationDao;
 import com.pichkur.javaCourse.interfaces.OrganizationService;
 import com.pichkur.javaCourse.mapper.MapperFacade;
-import com.pichkur.javaCourse.model.OfficeEntity;
 import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.model.view.OrganizationView;
+import com.pichkur.javaCourse.model.view.organization.OrganizationView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

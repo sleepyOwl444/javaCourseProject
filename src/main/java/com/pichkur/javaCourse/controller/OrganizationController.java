@@ -2,7 +2,7 @@ package com.pichkur.javaCourse.controller;
 
 
 import com.pichkur.javaCourse.interfaces.OrganizationService;
-import com.pichkur.javaCourse.model.view.OrganizationView;
+import com.pichkur.javaCourse.model.view.organization.OrganizationView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

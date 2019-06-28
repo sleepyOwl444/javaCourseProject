@@ -2,9 +2,8 @@ package com.pichkur.javaCourse.controller;
 
 import com.pichkur.javaCourse.interfaces.OfficeService;
 
-import com.pichkur.javaCourse.model.OfficeEntity;
 import com.pichkur.javaCourse.model.view.AnswerView;
-import com.pichkur.javaCourse.model.view.OfficeView;
+import com.pichkur.javaCourse.model.view.office.OfficeView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

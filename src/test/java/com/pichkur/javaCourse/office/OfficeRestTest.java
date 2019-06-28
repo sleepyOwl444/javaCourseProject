@@ -1,13 +1,11 @@
 package com.pichkur.javaCourse.office;
 
 
-import com.pichkur.javaCourse.model.OfficeEntity;
-import com.pichkur.javaCourse.model.view.OfficeView;
+import com.pichkur.javaCourse.model.view.office.OfficeView;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;

@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.model;
 
 
-import com.pichkur.javaCourse.model.view.OfficeView;
+import com.pichkur.javaCourse.model.view.office.OfficeView;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

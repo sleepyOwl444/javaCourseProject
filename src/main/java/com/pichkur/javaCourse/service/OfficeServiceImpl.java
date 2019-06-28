@@ -5,15 +5,12 @@ import com.pichkur.javaCourse.dao.interfaces.OfficeDao;
 import com.pichkur.javaCourse.interfaces.OfficeService;
 import com.pichkur.javaCourse.mapper.MapperFacade;
 import com.pichkur.javaCourse.model.OfficeEntity;
-import com.pichkur.javaCourse.model.OrganizationEntity;
-import com.pichkur.javaCourse.model.UserEntity;
 import com.pichkur.javaCourse.model.view.AnswerView;
-import com.pichkur.javaCourse.model.view.OfficeView;
+import com.pichkur.javaCourse.model.view.office.OfficeView;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

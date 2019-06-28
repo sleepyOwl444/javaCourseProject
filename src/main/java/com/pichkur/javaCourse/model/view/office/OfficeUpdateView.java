@@ -1,4 +1,4 @@
-package com.pichkur.javaCourse.model.view;
+package com.pichkur.javaCourse.model.view.office;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.Api;
@@ -19,16 +19,18 @@ import javax.validation.constraints.Size;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ApiModel(description = "Офис")
-public class OfficeView {
+public class OfficeUpdateView {
 
     @NotNull
     @ApiModelProperty(value = "Уникальный идентиикатор", hidden = true, example = "1")
     private Long id;
 
+    @NotNull
     @Size(max = 50)
     @ApiModelProperty(value = "Название офиса")
     private String name;
 
+    @NotNull
     @Size(max = 50)
     @ApiModelProperty(value = "Адрес офиса")
     private String address;

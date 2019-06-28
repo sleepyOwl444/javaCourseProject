@@ -2,7 +2,7 @@ package com.pichkur.javaCourse.controller;
 
 
 import com.pichkur.javaCourse.interfaces.UserService;
-import com.pichkur.javaCourse.model.view.UserView;
+import com.pichkur.javaCourse.model.view.user.UserView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

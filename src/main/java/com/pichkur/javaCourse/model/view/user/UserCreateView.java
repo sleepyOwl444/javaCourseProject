@@ -1,4 +1,4 @@
-package com.pichkur.javaCourse.model.view;
+package com.pichkur.javaCourse.model.view.user;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserView {
+public class UserCreateView {
 
     @NotNull
     private Long id;
@@ -48,7 +48,7 @@ public class UserView {
     @Size(max = 20)
     private String phone;
 
-   @Size(max = 50)
+    @Size(max = 50)
     private String docName;
 
     @Size(max = 50)

@@ -1,6 +1,6 @@
 package com.pichkur.javaCourse.interfaces;
 
-import com.pichkur.javaCourse.model.view.UserView;
+import com.pichkur.javaCourse.model.view.user.UserView;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.List;

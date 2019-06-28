@@ -1,7 +1,7 @@
 package com.pichkur.javaCourse.interfaces;
 
 import com.pichkur.javaCourse.model.view.AnswerView;
-import com.pichkur.javaCourse.model.view.OfficeView;
+import com.pichkur.javaCourse.model.view.office.OfficeView;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
